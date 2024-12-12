@@ -1,0 +1,15 @@
+<div class="navbar" [class.menu-open]="menuActive">
+    <div class="navbar-logo">
+        <a routerLink="/" class="navbar-brand">MyApp</a>
+        <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+    </div>
+
+    <div class="navbar-menu" [class.active]="menuActive">
+        <a routerLink="/" routerLinkActive="active">Home</a>
+        <a routerLink="/about" routerLinkActive="active">About</a>
+        <a routerLink="/services" routerLinkActive="active">Services</a>
+        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+        <button class="menu-toggle-close font-bold flex justify-content-center align-content-center w-2 p-1"
+            (click)="toggleMenu()">☰</button>
+    </div>
+</div>

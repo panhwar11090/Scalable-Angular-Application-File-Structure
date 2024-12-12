@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeflex/primeflex.css";
+
+
+// Breakpoints for responsive design
+$desktop-min-width: 1200px; // Desktop: Width ≥ 1200px
+$tablet-min-width: 768px;   // Tablet: Width between 768px and 1199px
+$tablet-max-width: 1199px;  // Tablet: Width ≤ 1199px
+$mobile-max-width: 768px;   // Mobile: Width ≤ 768px
+
+// Mixin for responsiveness
+@mixin respond-to-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin respond-to-tablet {
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    @content;
+  }
+}
+
+@mixin respond-to-mobile {
+  @media (max-width: $mobile-max-width) {
+    @content;
+  }
+}
+
+// Utility Classes
+.hidden {
+  display: none !important;
+}
+
+.block {
+  display: block !important;
+}

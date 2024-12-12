@@ -1,0 +1,19 @@
+<div class="card-grid mt-8">
+    <p-card *ngFor="let card of cards" [header]="card.title" [subheader]="card.subheader">
+        <!-- Header Template -->
+        <ng-template pTemplate="header">
+            <img [src]="card.image" [alt]="card.title" />
+        </ng-template>
+
+        <!-- Card Content -->
+        <p>{{ card.description }}</p>
+
+        <!-- Footer Template -->
+        <ng-template pTemplate="footer">
+            <div class="flex justify-content-between">
+                <p-button label="Cancel" severity="secondary"></p-button>
+                <p-button label="Save"></p-button>
+            </div>
+        </ng-template>
+    </p-card>
+</div>

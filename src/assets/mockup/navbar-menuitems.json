@@ -1,0 +1,35 @@
+[
+    {
+      "label": "MEDIAPOOL"
+    },
+    {
+      "label": "STATISTIC"
+    },
+    {
+      "label": "USER",
+      "expanded": false,
+      "items": [
+        [
+          {
+            "label": "USER DETAILS",
+            "items": [
+              {
+                "label": "Contact"
+              },
+              {
+                "label": "Change Password"
+              },
+              {
+                "label": "Change Theme"
+              },
+              {
+                "label": "Logout",
+                "routerLink": "/logout"
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  ]
+  

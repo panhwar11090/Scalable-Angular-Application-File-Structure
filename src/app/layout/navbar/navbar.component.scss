@@ -1,0 +1,143 @@
+
+@import '../../../styles/variables';
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+
+    .navbar-brand {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+
+      &:hover {
+        color: #d1d1d1;
+      }
+    }
+
+    .menu-toggle {
+      display: none; // Hidden by default
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+
+      @include respond-to-tablet {
+        display: block; // Visible on tablet
+      }
+
+      @include respond-to-mobile {
+        display: block; // Visible on mobile
+      }
+    }
+
+    .menu-toggle-close {
+      display: none; // Hidden by default
+
+      @include respond-to-tablet {
+        display: block; // Visible on tablet
+      }
+
+      @include respond-to-mobile {
+        display: block; // Visible on mobile
+      }
+
+      @include respond-to-desktop {
+        display: none; // Hidden on desktop
+      }
+    }
+  }
+
+  .navbar-menu {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+
+      &:hover {
+        color: #d1d1d1;
+      }
+
+      &.active {
+        font-weight: bold;
+        border-bottom: 2px solid white;
+      }
+    }
+
+    // Hidden by default for mobile and tablet
+    @include respond-to-tablet {
+      z-index: 5;
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      flex-direction: column;
+      background-color: #007bff;
+      box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+
+      &.active {
+        transform: translateX(0); // Slide in when active
+        display: flex; // Flex when active
+      }
+    }
+
+    @include respond-to-mobile {
+      z-index: 5;
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      background-color: #007bff;
+      box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+      gap: 55px;
+      &.active {
+        transform: translateX(0); // Slide in when active
+        display: flex; // Flex when active
+      }
+    }
+  }
+
+  @include respond-to-desktop {
+    .menu-toggle {
+      display: none;
+    }
+
+    .menu-toggle-close {
+      display: none;
+    }
+
+    .navbar-menu {
+      display: flex;
+      position: static;
+      flex-direction: row;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}

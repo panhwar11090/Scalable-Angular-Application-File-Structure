@@ -1,0 +1,43 @@
+@import '../../../styles/variables';
+
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+
+  /* Desktop Layout: 3 Columns */
+  @include respond-to-desktop {
+    grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Max 3 cards */
+  }
+
+  /* Tablet Layout: 2 Columns */
+  @include respond-to-tablet {
+    grid-template-columns: repeat(2, minmax(200px, 1fr)); /* Max 2 cards */
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Mobile Layout: 1 Column */
+  @include respond-to-mobile {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    max-width: 300px; /* Restrict card size on small screens */
+    margin: 0 auto;   /* Center cards */
+  }
+}
+
+.p-card {
+  max-width: 100%; /* Default: Full width within its grid column */
+  width: 100%;      /* Allow cards to stretch */
+  padding: 1rem;
+  margin: 0 auto;   /* Center cards */
+
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+}
