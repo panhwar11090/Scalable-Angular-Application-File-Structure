@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from './layout/navbar/navbar.component';
-import { CardComponent } from "./layout/card/card.component"; // Import NavbarComponent
+import { CardComponent } from "./shared/components/card/card.component"; // Import NavbarComponent
 
 @Component({
   selector: 'app-root',
